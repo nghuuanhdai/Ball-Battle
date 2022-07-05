@@ -56,17 +56,4 @@ public class PlayerInfoUI : MonoBehaviour
     {
         return $"{PlayerName} ({PlayerPosition})";
     }
-
-    private void OnValidate() {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.delayCall += () =>
-        {
-            MaxEnergy = _maxEnergy;
-            Energy = _energy;
-            PlayerPosition = _playerPosition;
-            PlayerName = _playerName;
-            AccentColor = _accentColor;
-        };
-        #endif
-    }
 }

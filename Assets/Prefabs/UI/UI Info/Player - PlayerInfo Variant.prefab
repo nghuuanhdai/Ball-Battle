@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: fillFromRight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1741144175377607974, guid: 483cf9540368d604c835aeb08dbf810d, type: 3}
+      propertyPath: _fillFromRight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1741144176144348184, guid: 483cf9540368d604c835aeb08dbf810d, type: 3}
       propertyPath: m_Name
       value: Player - PlayerInfo Variant

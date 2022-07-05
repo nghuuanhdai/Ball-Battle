@@ -13,13 +13,4 @@ public class Goal : MonoBehaviour
         if(goalMaterial)
             goalMaterial.color = Color;
     }
-
-    private void OnValidate() {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.delayCall += () =>
-        {
-            Color = _color;
-        };
-        #endif
-    }
 }

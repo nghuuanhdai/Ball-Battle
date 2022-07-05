@@ -521,6 +521,7 @@ MonoBehaviour:
   _color: {r: 0.85882354, g: 0.2628692, b: 0.09411765, a: 1}
   _maxEnergy: 5
   _energy: 5
+  fillFromRight: 0
 --- !u!114 &1741144175377607975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +559,7 @@ GameObject:
   - component: {fileID: 1741144176144348191}
   - component: {fileID: 1741144176144348190}
   - component: {fileID: -4019023746727749587}
+  - component: {fileID: -5560147695234469970}
   m_Layer: 5
   m_Name: PlayerInfo
   m_TagString: Untagged
@@ -619,6 +621,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variable: {fileID: 0}
+  playerInfoUI: {fileID: 1741144176144348190}
+--- !u!114 &-5560147695234469970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741144176144348184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c74f3969898c24498790b66230e433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variable: {fileID: 11400000, guid: 957c85baf637dbb448fc9b8f84aee3b4, type: 2}
   playerInfoUI: {fileID: 1741144176144348190}
 --- !u!1 &1741144177019507801
 GameObject:

@@ -24,14 +24,4 @@ public class PlayerInfoText : MonoBehaviour
         if(textUI)
             textUI.color = TextColor;
     }
-
-    private void OnValidate() {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.delayCall += () =>
-        {
-            TextColor = _textColor;
-            Text = _text;
-        };
-        #endif
-    }
 }

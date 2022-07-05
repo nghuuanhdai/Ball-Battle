@@ -13,13 +13,4 @@ public class SoldierRenderer : MonoBehaviour
         if(soldierMaterial)
             soldierMaterial.color = Color;
     }
-
-    private void OnValidate() {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.delayCall += () =>
-        {
-            Color = _color;
-        };
-        #endif
-    }
 }

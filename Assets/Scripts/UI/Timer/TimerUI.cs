@@ -27,14 +27,4 @@ public class TimerUI : MonoBehaviour
         if(timeLeftText)
             timeLeftText.text = $"{TimeLeft}s";
     }
-
-    private void OnValidate() {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.delayCall += () =>
-        {
-            Color = _color;
-            TimeLeft = _timeLeft;
-        }; 
-        #endif
-    }
 }

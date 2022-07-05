@@ -8,6 +8,7 @@ public class GoalColorReactor : ScriptableVariableReactor<Color>
 
     protected override void OnValueChanged()
     {
-        goal.Color = variable.Value;
+        if(goal)
+            goal.Color = variable.Value;
     }
 }

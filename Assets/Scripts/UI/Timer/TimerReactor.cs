@@ -7,6 +7,7 @@ public class TimerReactor : ScriptableVariableReactor<float>
     [SerializeField] private TimerUI timer;
     protected override void OnValueChanged()
     {
-        timer.TimeLeft = Mathf.RoundToInt(variable.Value);
+        if(timer)
+            timer.TimeLeft = Mathf.RoundToInt(variable.Value);
     }
 }
