@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32f4aa98dd963da48ac00787f48e7981, type: 3}
-  m_Name: Opponent - TeamTag
+  m_Name: SpawnEnergyCost
   m_EditorClassIdentifier: 
   OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  _value: 0
+  _value: 3

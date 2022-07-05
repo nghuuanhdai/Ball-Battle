@@ -1,18 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public event Action<Soldier> OnSoldierSet;
+    public Soldier Soldier => soldier;
+    private Soldier soldier;
+    public bool IsInGoal;
 
-    // Update is called once per frame
-    void Update()
+    public void SetSoldier(Soldier soldier)
     {
-        
+        this.soldier = soldier;
+        OnSoldierSet?.Invoke(soldier);
     }
 }

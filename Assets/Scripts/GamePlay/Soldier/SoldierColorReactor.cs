@@ -10,8 +10,5 @@ public class SoldierColorReactor : ScriptableVariableReactor<Color>
     {
         if(soldierRenderer)
             soldierRenderer.Color = variable.Value;
-        
-
-        
     }
 }

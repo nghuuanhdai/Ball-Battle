@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Soldier : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Ball Ball;
+    public Goal TargetGoal;
+    public Vector3 TargetFieldDirection;
+    public TeamController TeamController;
 }

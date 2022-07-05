@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3081446321679839575}
   - component: {fileID: 4954553166632373399}
+  - component: {fileID: 6222892614563454232}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -44,6 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa85d54e709b24458d489958b9991e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsInGoal: 0
+--- !u!135 &6222892614563454232
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315446158828045395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2166125
+  m_Center: {x: 0, y: 0.24, z: 0}
 --- !u!1001 &2190158506458061672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,26 +116,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd43816b94c32b43b0dba3610e5b0c4, type: 3}
---- !u!1 &4768238767030066666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6649897366082635394, guid: 4dd43816b94c32b43b0dba3610e5b0c4, type: 3}
-  m_PrefabInstance: {fileID: 2190158506458061672}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &340219160967476521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1935899166429736513, guid: 4dd43816b94c32b43b0dba3610e5b0c4, type: 3}
   m_PrefabInstance: {fileID: 2190158506458061672}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &1444476252349527502
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4768238767030066666}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2166125
-  m_Center: {x: 0, y: 0, z: 0}

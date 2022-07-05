@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,14 @@ using UnityEngine;
 public class SoldierBrainController : MonoBehaviour
 {   
     [SerializeField] private SoldierBrain attackMode, defendMode;
+    [SerializeField] private PlayMode _playMode;
+    public PlayMode PlayMode { get => _playMode; set { _playMode = value; SwitchMode(_playMode); }}
 
-    public void SwitchMode(PlayMode playMode)
+    private void Awake() {
+        SwitchMode(PlayMode);
+    }
+
+    private void SwitchMode(PlayMode playMode)
     {
         switch (playMode)
         {
@@ -26,10 +33,25 @@ public class SoldierBrainController : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        //activeBehaviour.OnCollisionEnter(other)
+        GetActiveBehaviour()?.OnCollisionEnter(other);
     }
 
     private void OnTriggerEnter(Collider other) {
-        //activeBehaviour.OnTriggerEnter(other)
+        GetActiveBehaviour()?.OnTriggerEnter(other);
+    }
+
+    private SoldierBehaviour GetActiveBehaviour()
+    {
+        var activeBrain = GetActiveBrain();
+        return activeBrain?.ActiveBehaviour;
+    }
+
+    private SoldierBrain GetActiveBrain()
+    {
+        if(attackMode.gameObject.activeSelf)
+            return attackMode;
+        if(defendMode.gameObject.activeSelf)
+            return defendMode;
+        return null;
     }
 }

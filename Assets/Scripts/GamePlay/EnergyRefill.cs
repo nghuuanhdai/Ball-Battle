@@ -9,7 +9,7 @@ public class EnergyRefill : MonoBehaviour
     [SerializeField] private FloatVariable refillRate;
 
     private void Awake() {
-        energy.Value = 0;
+        energy.Value = maxEnergy.Value;
     }
 
     private void Update() {
