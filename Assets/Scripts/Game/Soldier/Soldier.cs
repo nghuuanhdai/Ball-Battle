@@ -39,6 +39,11 @@ public class Soldier : MonoBehaviour
         }
     }
 
+    internal bool IsInActive()
+    {
+        return activeAI.IsInactive();
+    }
+
     internal void SetMode(SoldierAIMode mode)
     {
         this.mode = mode;

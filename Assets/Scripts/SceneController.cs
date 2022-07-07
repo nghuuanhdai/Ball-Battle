@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -46,9 +45,23 @@ public class SceneController : MonoBehaviour
                 yield return new WaitUntil(()=>gameState == GameState.Playing);
                 gameController.SetMode(playMode);
                 HideAll();
+                var gameData = new GameData();
+                if(playMode == GamePlayMode.Multi)
+                {
+                    gameData.BotTeamName = "Player 1";
+                    gameData.TopTeamName = "Player 2";
+                }
+
+                if(playMode == GamePlayMode.Single)
+                {
+                    gameData.BotTeamName = "Player";
+                    gameData.TopTeamName = "Bot";
+                }
+
+                ingameUI.SetGameData(gameData);
                 ingameUI.GetComponent<CanvasAlphaController>().Show();
 
-                yield return gameController.Play();
+                yield return gameController.Play(gameData);
                 gameOverUI.ScoreData = gameController.GameData;
                 gameState = GameState.GameOver;
 

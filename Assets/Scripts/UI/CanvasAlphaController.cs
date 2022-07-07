@@ -7,9 +7,15 @@ public class CanvasAlphaController : MonoBehaviour
     [SerializeField] RectTransform container;
     [SerializeField] CanvasGroup canvasGroup;
     [SerializeField] float duration = 0.5f;
+    [SerializeField] bool hideByDefault = true;
 
     private float targetAlpha;
     private Coroutine updateCR;
+
+    private void Awake() {
+        if(hideByDefault)
+            HideImmediately();
+    }
 
     internal void ShowImmediately()
     {
@@ -54,7 +60,7 @@ public class CanvasAlphaController : MonoBehaviour
         while (canvasGroup.alpha != targetAlpha)
         {
             var sign = Mathf.Sign(targetAlpha - canvasGroup.alpha);
-            canvasGroup.alpha += sign*1/duration;
+            canvasGroup.alpha += sign*Time.deltaTime/duration;
             var newSign = Mathf.Sign(targetAlpha - canvasGroup.alpha);
             if(newSign != sign || canvasGroup.alpha == targetAlpha)
             {

@@ -38,4 +38,9 @@ public class DefendAI : AIController {
     {
         SetBehaviour(standby);
     }
+
+    internal override bool IsInactive()
+    {
+        return ActiveBehaviour == inactive;
+    }
 }

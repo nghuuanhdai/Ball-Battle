@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    protected AIBehaviour activeBehaviour;
+    private AIBehaviour activeBehaviour;
     private Soldier _soldier;
     protected Soldier soldier {
         get {
@@ -15,6 +15,9 @@ public class AIController : MonoBehaviour
     }
 
     virtual protected List<AIBehaviour> behaviours => new List<AIBehaviour>();
+
+    protected AIBehaviour ActiveBehaviour { get => activeBehaviour; }
+
     internal void DisableAllBehaviour()
     {
         behaviours.ForEach(behaviour => behaviour.Deactivate());
@@ -37,5 +40,10 @@ public class AIController : MonoBehaviour
 
     public virtual void OnCollisionEnter(Collision other){
         activeBehaviour?.OnCollisionEnter(other);
+    }
+
+    internal virtual bool IsInactive()
+    {
+        return false;
     }
 }

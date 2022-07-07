@@ -57,8 +57,12 @@ public class AttackAI : AIController {
     public override void OnCollisionEnter(Collision other) {
         var ball = other.gameObject.GetComponent<Ball>();
         if(ball) OnHitBall(ball);
-        activeBehaviour?.OnCollisionEnter(other);
-        
+        ActiveBehaviour?.OnCollisionEnter(other);
         base.OnCollisionEnter(other);
+    }
+
+    internal override bool IsInactive()
+    {
+        return ActiveBehaviour == inactive;
     }
 }

@@ -29,6 +29,7 @@ public class Team
         foreach (var sol in soldiers)
         {
             if(sol == soldier) continue;
+            if(sol.IsInActive()) continue;
             var distance =( sol.transform.localPosition - soldier.transform.localPosition).magnitude;
             if(distance < closestDistance)
             {

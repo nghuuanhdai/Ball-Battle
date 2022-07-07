@@ -6,16 +6,21 @@ public class AttackInactive : AIBehaviour {
     public UnityEvent OnTimeout = new UnityEvent();
     [SerializeField] FloatVariable inactiveTime;
     [SerializeField] FloatVariable activeConsumption;
-    
+    private Coroutine countDownCR;
+
     protected override void OnActivated() {
         //TODO turn to grayscale
-        StartCoroutine(ReactivateCountDownCR());
+        if(countDownCR != null)
+            StopCoroutine(countDownCR); 
+        countDownCR = StartCoroutine(ReactivateCountDownCR());
         soldier.Collider.enabled = false;
     }
 
     protected override void OnDeactivated()
     {
-        soldier.Collider.enabled = true;        
+        soldier.Collider.enabled = true;  
+        if(countDownCR != null)
+            StopCoroutine(countDownCR);      
     }
 
     private IEnumerator ReactivateCountDownCR()

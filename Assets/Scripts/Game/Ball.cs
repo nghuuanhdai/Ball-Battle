@@ -18,4 +18,10 @@ public class Ball : MonoBehaviour {
     }
 
     public Goal Goal;
+
+    private void OnTriggerEnter(Collider other) {
+        var goal = other.gameObject.GetComponent<Goal>();
+        if(goal != null)
+        Goal = goal;
+    }
 }

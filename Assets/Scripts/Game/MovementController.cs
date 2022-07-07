@@ -45,6 +45,7 @@ public class MovementController : MonoBehaviour
         var worldTargetPosition = transform.parent.TransformPoint(targetPosition);
         var lookDir = worldTargetPosition - rb.position;
         rb.position = worldTargetPosition;
-        rb.rotation = Quaternion.LookRotation(lookDir);
+        if(lookDir.magnitude > 0)
+            rb.rotation = Quaternion.LookRotation(lookDir);
     }
 }

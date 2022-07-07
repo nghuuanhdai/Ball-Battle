@@ -10,13 +10,13 @@ public class PlayerInfoUI : MonoBehaviour
 
     [SerializeField] private Color _accentColor = Color.gray;
     [SerializeField] private string _playerName = "undefined";
-    [SerializeField] private PlayMode _playerPosition;
+    [SerializeField] private TeamPlayMode _playerPosition;
     [SerializeField] private int _maxEnergy = 5;
     [SerializeField] private float _energy = 0;
 
     public Color AccentColor { get => _accentColor; set {_accentColor = value; OnAccentColorChanged();} }
     public string PlayerName { get => _playerName; set {_playerName = value; OnPlayerNameChanged();} }
-    public PlayMode PlayerPosition { get => _playerPosition; set {_playerPosition = value; OnPositionChanged();} }
+    public TeamPlayMode PlayerPosition { get => _playerPosition; set {_playerPosition = value; OnPositionChanged();} }
     public int MaxEnergy { get => _maxEnergy; set {_maxEnergy = value; OnMaxEnergyChanged();} }
     public float Energy { get => _energy; set {_energy = value; OnEnergyChanged();} }
 

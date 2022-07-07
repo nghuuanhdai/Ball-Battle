@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour
         bot.enabled = playMode == GamePlayMode.Single;
     }
 
-    internal IEnumerator Play()
+    internal IEnumerator Play(GameData gameData)
     {
         gameResult = new GameResultData();
         CleanField();
@@ -109,15 +109,21 @@ public class GameController : MonoBehaviour
             currentBotTeam.AccentColor = botTeamColor;
             currentTopTeam.AccentColor = topTeamColor;
 
+            topGoal.Team = currentTopTeam;
+            botGoal.Team = currentBotTeam;
+
             botEnergyFiller.Reset();
             topEnergyFiller.Reset();
 
             Team winTeam = null;
             timer.Reset();
             enableTouchPlacement = true;
+            gameData.BotPlayMode = currentBotTeam.playMode;
+            gameData.TopPlayMode = currentTopTeam.playMode;
+            gameData.OnMatchStart.Invoke();
             while (true)
             {
-                if(ball.Goal?.Team == attackTeam)
+                if(ball.Goal?.Team == defendTeam)
                 {
                     winTeam = attackTeam;
                     break;
@@ -139,6 +145,10 @@ public class GameController : MonoBehaviour
 
             gameResult.TopPlayerWinMatch.Add(currentTopTeam == winTeam);
             gameResult.BottomPlayerWinMatch.Add(currentBotTeam == winTeam);
+
+            gameData.BotWin = currentBotTeam == winTeam;
+            gameData.TopWin = currentTopTeam == winTeam;
+            gameData.OnMatchEnd.Invoke();
         }
         
         var topScore = gameResult.TopPlayerWinMatch.FindAll(match => match).Count;
