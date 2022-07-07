@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    private AIBehaviour activeBehaviour;
     private Soldier _soldier;
     protected Soldier soldier {
         get {
@@ -16,7 +15,7 @@ public class AIController : MonoBehaviour
 
     virtual protected List<AIBehaviour> behaviours => new List<AIBehaviour>();
 
-    protected AIBehaviour ActiveBehaviour { get => activeBehaviour; }
+    protected AIBehaviour ActiveBehaviour { get => behaviours.Find(item => item.IsActivated()); }
 
     internal void DisableAllBehaviour()
     {
@@ -34,12 +33,11 @@ public class AIController : MonoBehaviour
         if(!behaviours.Contains(behaviour))
             return;
         DisableAllBehaviour();
-        behaviour.Actiate();
-        activeBehaviour = behaviour;
+        behaviour.Activate();
     }
 
     public virtual void OnCollisionEnter(Collision other){
-        activeBehaviour?.OnCollisionEnter(other);
+        ActiveBehaviour?.OnCollisionEnter(other);
     }
 
     internal virtual bool IsInactive()

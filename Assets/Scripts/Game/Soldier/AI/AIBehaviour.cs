@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class AIBehaviour : MonoBehaviour
@@ -13,12 +14,18 @@ public class AIBehaviour : MonoBehaviour
 
     protected bool active;
     public virtual void OnCollisionEnter(Collision other){ }
-    public virtual void Actiate(){ 
+    public virtual void Activate(){ 
         var crrActivated = this.active;
         this.active = true;
         if(!crrActivated)
             OnActivated();
     }
+
+    internal bool IsActivated()
+    {
+        return this.active;
+    }
+
     public virtual void Deactivate(){
         var crrActivated = this.active; 
         this.active = false;

@@ -31,6 +31,7 @@ public class AttackAI : AIController {
 
     private void OnPassingComplete()
     {
+        Debug.Log("Passing Complete");
         SetBehaviour(inactive);
     }
 

@@ -51,7 +51,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _movement: {fileID: 8038665298112860499}
-  _parentConstraint: {fileID: 0}
   Goal: {fileID: 0}
 --- !u!135 &6222892614563454232
 SphereCollider:
@@ -81,7 +80,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &8038665298112860499
 MonoBehaviour:
   m_ObjectHideFlags: 0

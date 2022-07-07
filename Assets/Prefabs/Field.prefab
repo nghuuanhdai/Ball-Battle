@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 7784000302917947231}
   - component: {fileID: 7784000302917947230}
   - component: {fileID: 7784000302917947229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,8 +491,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9052851, y: 1, z: 0.93752724}
+  m_Center: {x: -0.0044956002, y: 0, z: -0.031235889}
 --- !u!114 &7784000302917947229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 7784000303777537166}
   - component: {fileID: 7784000303777537165}
   - component: {fileID: 7784000303777537164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,8 +696,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.8900836, y: 1, z: 0.89484483}
+  m_Center: {x: -0.0010014605, y: 0, z: 0.052577257}
 --- !u!114 &7784000303777537164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,6 +814,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a756817a45292419756eaf58d150e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomTimeMin: 2
+  randomTimeMax: 4
+  botRegion: {fileID: 7784000302917947230}
+  fieldRoot: {fileID: 7784000302365898297}
 --- !u!114 &7784000303834736924
 MonoBehaviour:
   m_ObjectHideFlags: 0

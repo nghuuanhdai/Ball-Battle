@@ -8,9 +8,14 @@ public class Receiving : AIBehaviour {
 
     protected override void OnActivated() {
         //TODO facing to ball
+    }
+
+    private void Update() {
+        if(!active) return;
+        if(Ball == null) return;
         Ball.Movement.Speed = passingSpeed.Value;
         Ball.Movement.MoveTo(soldier.transform);
-    }
+    }    
 
     protected override void OnDeactivated()
     {

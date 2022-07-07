@@ -30,18 +30,23 @@ public class GameController : MonoBehaviour
 
     private void Awake() {
         botFieldDetector.OnTouched.AddListener(SpawnBotSoldier);
-        topFieldDetector.OnTouched.AddListener(SpawnTopSoldier);
+        topFieldDetector.OnTouched.AddListener(TopTouchSpawn);
     }
 
     private void OnDestroy() {
         botFieldDetector.OnTouched.RemoveListener(SpawnBotSoldier);
-        topFieldDetector.OnTouched.RemoveListener(SpawnTopSoldier);
+        topFieldDetector.OnTouched.RemoveListener(TopTouchSpawn);
     }
 
-    private void SpawnTopSoldier(Vector3 fieldLocalPosition)
+    private void TopTouchSpawn(Vector3 fieldLocalPosition)
+    {
+        if(!allowTopSpawn) return;
+        SpawnTopSoldier(fieldLocalPosition);
+    }
+
+    public void SpawnTopSoldier(Vector3 fieldLocalPosition)
     {
         if(!enableTouchPlacement) return;
-        if(!allowTopSpawn) return;
         if (topTeamEnergy.Value - spawnConsumption.Value < 0) return;
         var soldier = Instantiate(soldierPrefab, fieldRoot);
         soldier.SetMode(ConvertMode(currentTopTeam.PlayMode));
