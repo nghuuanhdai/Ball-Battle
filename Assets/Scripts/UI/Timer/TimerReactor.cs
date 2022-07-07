@@ -1,13 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimerReactor : ScriptableVariableReactor<float>
+public class TimerReactor : MonoBehaviour
 {
+    [SerializeField] private FloatVariable MatchMaxTime;
+    [SerializeField] private FloatVariable MatchTime;
+
     [SerializeField] private TimerUI timer;
-    protected override void OnValueChanged()
+    private void Awake() {
+        MatchMaxTime.OnValueChanged.AddListener(OnTimeLeftChanged);
+        MatchTime.OnValueChanged.AddListener(OnTimeLeftChanged);
+    }
+
+    private void OnDestroy() {
+        MatchMaxTime.OnValueChanged.RemoveListener(OnTimeLeftChanged);
+        MatchTime.OnValueChanged.RemoveListener(OnTimeLeftChanged);
+    }
+
+    private void OnTimeLeftChanged()
     {
-        if(timer)
-            timer.TimeLeft = Mathf.RoundToInt(variable.Value);
+        timer.TimeLeft = Mathf.RoundToInt(Mathf.Max(0, MatchMaxTime.Value - MatchTime.Value));
     }
 }

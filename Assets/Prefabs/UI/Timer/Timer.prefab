@@ -278,7 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e85ab5433bb8694d9bb10771175b34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  variable: {fileID: 11400000, guid: 72a83a9d070dd764386b69cd91ce1f94, type: 2}
+  MatchMaxTime: {fileID: 11400000, guid: a3844b1f66d79cb42b58e0f6cae5cbcf, type: 2}
+  MatchTime: {fileID: 11400000, guid: 72a83a9d070dd764386b69cd91ce1f94, type: 2}
   timer: {fileID: 4099748843888190782}
 --- !u!1 &4099748844638229881
 GameObject:

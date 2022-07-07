@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8035799816541299751}
+  - component: {fileID: 1213963377221930861}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1213963377221930861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035799816541299750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32e005cc23da914981477cfc24952d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 8758654003941258880}
+  teamColor: {fileID: 0}
 --- !u!1001 &8035799817408609773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,5 +114,10 @@ PrefabInstance:
 --- !u!4 &7498031751058725382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 06511166c379f9b418b6ad56dd6406bf, type: 3}
+  m_PrefabInstance: {fileID: 8035799817408609773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8758654003941258880 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7635826562936255635, guid: 06511166c379f9b418b6ad56dd6406bf, type: 3}
   m_PrefabInstance: {fileID: 8035799817408609773}
   m_PrefabAsset: {fileID: 0}

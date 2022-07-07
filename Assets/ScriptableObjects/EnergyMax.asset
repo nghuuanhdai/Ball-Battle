@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32f4aa98dd963da48ac00787f48e7981, type: 3}
+  m_Script: {fileID: 11500000, guid: c6f4a6afa1215d143b71c576665358a8, type: 3}
   m_Name: EnergyMax
   m_EditorClassIdentifier: 
   OnValueChanged:
