@@ -7,7 +7,7 @@ public class Receiving : AIBehaviour {
     public Ball Ball;
 
     protected override void OnActivated() {
-        //TODO facing to ball
+        soldier.Movement.LookAt(Ball.transform);
     }
 
     private void Update() {

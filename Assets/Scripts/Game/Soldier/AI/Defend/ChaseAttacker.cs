@@ -9,6 +9,8 @@ public class ChaseAttacker : AIBehaviour {
     private void Update() {
         if(!active) return;
         if(!Target) return;
+        if(Target.HoldingBall == null)
+            OnAttackerCollide.Invoke();
         soldier.Movement.Speed = chaseSpeed.Value;
         soldier.Movement.MoveTo(Target.transform);
     }

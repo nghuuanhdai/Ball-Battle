@@ -55,7 +55,7 @@ public class CanvasAlphaController : MonoBehaviour
 
     private IEnumerator UpdateAlpha()
     {
-        container.gameObject.SetActive(targetAlpha > 0);
+        container.gameObject.SetActive(true);
         canvasGroup.interactable = false;
         while (canvasGroup.alpha != targetAlpha)
         {

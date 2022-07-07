@@ -12,6 +12,12 @@ public class MovementController : MonoBehaviour
     private Vector3 direction;
     public float Speed = 1;
 
+    internal void LookAt(Transform transform)
+    {
+        var lookDir = transform.position - rb.position;
+        rb.rotation = Quaternion.LookRotation(lookDir);
+    }
+
     internal void MoveInDirection(Vector3 direction)
     {
         this.direction = direction.normalized;
